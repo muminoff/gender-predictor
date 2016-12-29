@@ -1,11 +1,46 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>gender-predict-frontend</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gender Predict</title>
+    <link rel="stylesheet" href="//dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,900&amp;subset=cyrillic-ext" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+    <style>
+      .top-bar {
+        background-color: #F5F0EC;
+      }
+      a {
+        color: #212020;
+        background-color: #F5F0EC;
+      }
+      a :hover {
+        color: #F5F0EC;
+        background-color: #0C164F;
+      }
+    </style>
+    <div class="top-bar">
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#">Лойиҳа ҳақида</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="large">
+      <div class="row column text-center" id="app">
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
+
