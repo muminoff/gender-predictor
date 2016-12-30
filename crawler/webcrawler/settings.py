@@ -13,6 +13,7 @@ BOT_NAME = 'webcrawler'
 
 SPIDER_MODULES = ['webcrawler.spiders']
 NEWSPIDER_MODULE = 'webcrawler.spiders'
+RETRY_HTTP_CODES = [400]
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -33,7 +34,7 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -79,12 +80,12 @@ ROBOTSTXT_OBEY = True
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
-#AUTOTHROTTLE_DEBUG = False
+#AUTOTHROTTLE_DEBUG = True
 
 # Enable and configure HTTP caching (disabled by default)
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
-#HTTPCACHE_ENABLED = True
-#HTTPCACHE_EXPIRATION_SECS = 0
-#HTTPCACHE_DIR = 'httpcache'
-#HTTPCACHE_IGNORE_HTTP_CODES = []
-#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# HTTPCACHE_ENABLED = True
+# HTTPCACHE_EXPIRATION_SECS = 0
+# HTTPCACHE_DIR = 'httpcache'
+# HTTPCACHE_IGNORE_HTTP_CODES = []
+# HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
