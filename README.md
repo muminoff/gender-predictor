@@ -43,5 +43,8 @@
 ```bash
   $ cd backend
   $ pip install -r requirements.txt
+  $ cd crawler
+  $ scrapy crawl ismcrawler -t json -o ../corpus/ismlar.json
+  $ cd backend
   $ python3 -m sanic server.app --host=0.0.0.0 --port=8888 --workers=4
 ```
