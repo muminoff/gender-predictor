@@ -32,7 +32,7 @@ class GenderPredictor:
         test_set = featureset[cut_point:]
 
         self.train(train_set)
-        
+
         return self.test(test_set)
 
     def classify(self, name):
@@ -93,5 +93,12 @@ if __name__ == '__main__':
 
     while True:
         name = input('Текшириш учун исм киритинг: ')
-        print('{} исми тахмин бўйича {} исми.'.format(
-            name, (lambda name: 'эркаклар' if 'M' in gp.classify(name) else 'аёллар')(name)))
+        _ = {
+            'M': 'эркаклар',
+            'F': 'аёллар'
+        }
+        predicted_gender = _[gp.classify(name)]
+        print(
+            '{name} исми тахмин бўйича {gender} исми.'.format(
+                name=name,
+                gender=predicted_gender))
