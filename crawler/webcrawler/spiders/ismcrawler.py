@@ -52,5 +52,7 @@ class IsmcrawlerSpider(scrapy.Spider):
             def gender(url): return 'male' if 'boy' in url else 'female'
             item = HumanName()
             item['name'] = ism
-            item['gender'] = gender(response.url)
+            item['gender'] = (
+                lambda url: 'male' if 'boy' in url else 'female')(
+                response.url)
             yield item

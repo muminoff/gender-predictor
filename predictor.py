@@ -79,8 +79,9 @@ class GenderPredictor:
             'last_letter': name[-1],
             'last_two': name[-2:],
             'last_three': name[-3:],
-            'last_four': (lambda: name[-4:] if len(name) >= 4 else None)(),
+            'last_four': (lambda: name[-4:] if len(name) >= 4 else name)(),
             'first_three': name[:3],
+            'first_four': (lambda: name[:-4] if len(name) >= 4 else name)(),
             'last_is_vowel': (name[-1] in 'AEIOU')
         }
 
@@ -88,7 +89,7 @@ class GenderPredictor:
 if __name__ == '__main__':
     gp = GenderPredictor()
     accuracy = gp.train_and_test()
-    print('Аниқлик даражаси: ', accuracy)
+    print('Аниқлик даражаси: ', round(accuracy, 2))
 
     while True:
         name = input('Текшириш учун исм киритинг: ')
