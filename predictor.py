@@ -93,6 +93,10 @@ if __name__ == '__main__':
 
     while True:
         name = input('Текшириш учун исм киритинг: ')
+        
+        if name in 'qQ' or name == 'exit':
+            break
+
         _ = {
             'M': 'эркаклар',
             'F': 'аёллар'
