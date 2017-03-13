@@ -18,3 +18,5 @@ $ scrapy crawl ismcrawler -t csv -o ismlar.csv
 ```bash
 $ python predictor.py
 ```
+
+![image](screenshot.jpg)

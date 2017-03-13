@@ -21,7 +21,7 @@ class GenderPredictor:
 
         return featureset
 
-    def train_and_test(self, training_percent=0.80):
+    def train_and_test(self, training_percent=0.90):
         featureset = self.get_features()
         random.shuffle(featureset)
 
@@ -88,7 +88,9 @@ class GenderPredictor:
 if __name__ == '__main__':
     gp = GenderPredictor()
     accuracy = gp.train_and_test()
-    print('Accuracy: ', accuracy)
+    print('Аниқлик даражаси: ', accuracy)
 
-    name = input('Enter name to classify: ')
-    print('{} is classified as {}'.format(name, gp.classify(name)))
+    while True:
+        name = input('Текшириш учун исм киритинг: ')
+        print('{} исми тахмин бўйича {} исми.'.format(
+            name, (lambda name: 'эркаклар' if 'M' in gp.classify(name) else 'аёллар')(name)))
