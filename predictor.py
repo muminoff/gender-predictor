@@ -23,16 +23,22 @@ class GenderPredictor:
 
     def train_and_test(self, training_percent=0.90):
         featureset = self.get_features()
+        print('[1] Саралов ...')
         random.shuffle(featureset)
 
-        name_count = len(featureset)
-        cut_point = int(name_count * training_percent)
+        # name_count = len(featureset)
+        # cut_point = int(name_count * training_percent)
 
-        train_set = featureset[:cut_point]
-        test_set = featureset[cut_point:]
+        # train_set = featureset[:cut_point]
+        # test_set = featureset[cut_point:]
 
+        train_set = featureset
+        test_set = featureset
+
+        print('[2] Тайёрлов ...')
         self.train(train_set)
 
+        print('[3] Якуний синов ...')
         return self.test(test_set)
 
     def classify(self, name):
@@ -80,6 +86,7 @@ class GenderPredictor:
             'last_two': name[-2:],
             'last_three': name[-3:],
             'last_four': (lambda: name[-4:] if len(name) >= 4 else name)(),
+            'first_two': name[:2],
             'first_three': name[:3],
             'first_four': (lambda: name[:-4] if len(name) >= 4 else name)(),
             'last_is_vowel': (name[-1] in 'AEIOU')
